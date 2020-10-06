@@ -1,4 +1,5 @@
 import pygame
+from message import display_message
 
 pygame.init()
 
@@ -20,7 +21,10 @@ def car(x,y):
     gameDisplay.blit(carImg,(x,y))
 
 
+
+
 def game_loop():
+
     crashed = False
     x = display_width * 0.45
     y = display_height * 0.8
@@ -56,6 +60,7 @@ def game_loop():
         #x += x_change
 
         gameDisplay.fill(white)
+        display_message('Hello world',gameDisplay,display_width,display_height)
         car(x,y)
         pygame.display.update()
         clock.tick(60)
